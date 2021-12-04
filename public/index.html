@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Alpine JS testing</title>
 
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </head>
-    <body>
-        <h1>Quickstart</h1>
+<head>
+    <title>Alpine JS testing</title>
 
-        <div x-data="{ count: 0 }">
-            <button x-on:click="count++">Increment</button>
-         
-            <span x-text="count"></span>
-        </div>
-    </body>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <h1>Quickstart</h1>
+
+    <div x-data="{ count: 0, name: 'JP', increaseCount() { this.count++ }, changeName() { this.name += ' x' }}">
+        <button x-on:click="increaseCount()">Increment</button>
+        <p x-text="count"></p>
+
+        <button x-on:click="changeName()">Change name</button>
+        <p x-text="name"></p>
+    </div>
+</body>
+
 </html>
